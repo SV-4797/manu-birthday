@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="theme-color" content="#FFD6E8" />
+    <title>Happy 22nd Birthday, Manu ❤️</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============ LOADING SCREEN ============ -->
+    <div id="loader" class="loader">
+      <div class="loader-heart">❤</div>
+      <div class="loader-text">Preparing something special…</div>
+    </div>
+
+    <!-- ============ INTRO SCREEN ============ -->
+    <section id="intro" class="intro">
+      <canvas id="introCanvas" class="intro-canvas"></canvas>
+      <div class="intro-content">
+        <p class="intro-kicker">A love story in pixels</p>
+        <h1 class="intro-title">
+          Happy 22<sup>nd</sup> Birthday<br />
+          <span class="intro-name">Manu</span>
+          <span class="intro-heart">❤️</span>
+        </h1>
+        <p class="intro-subtitle">
+          Made with love by <span class="intro-signature">Your Pglu</span>
+        </p>
+        <button id="beginBtn" class="btn-glow">
+          <span>Begin Our Journey</span>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14M13 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <main id="main" class="main hidden">
+      <!-- SECTION 2: OUR STORY -->
+      <section class="story-section" data-section>
+        <div class="section-inner">
+          <p class="section-kicker">Chapter One</p>
+          <h2 class="section-title">Our Story</h2>
+          <p class="story-lead reveal">
+            Log kehte hai har love story ki kahani Ek unexpected moment se start
+            hoti hai. But humari story to humare milne se phle hi shuru ho gyi
+            thi, wo bhi dono side se Ek tarfa. Hum dono ko ek dusre pr crush ho
+            gya kya coincident tha.
+          </p>
+
+          <div class="story-timeline reveal">
+            <div class="story-line"></div>
+            <div class="story-date">
+              <div class="story-dot"></div>
+              <div class="story-card glass">
+                <span class="story-day">25</span>
+                <span class="story-month">October 2024</span>
+                <p class="story-caption">
+                  The day everything changed. Us din Subah dekhte hi dil pighal
+                  gya, darte darte btaya ki mst lg rhi ho. puri party me himmat
+                  juta kar finally tumhare sath photo lene ke liye bol paaya or
+                  Finally click bhi kr li. Never gonna forget that day.
+                </p>
+              </div>
+            </div>
+            <!-- </div>
+      <div class="story-timeline reveal"> -->
+            <div><br /></div>
+            <div class="story-line"></div>
+            <div class="story-date">
+              <div class="story-dot"></div>
+              <div class="story-card glass">
+                <span class="story-day">28</span>
+                <span class="story-month">October 2024</span>
+                <p class="story-caption">
+                  Finally sare jatan krke tumse contact krne ka zariya mil hi
+                  gya photos ke bahane se. Us din itna khush hua ki finally sb
+                  logo se alag tumse baat kr paunga akele me. Iss din humare
+                  rishte ki neev rkhi jaa chuki thi.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: 22 MEMORY GALLERY -->
+      <section class="gallery-section" data-section>
+        <div class="section-inner">
+          <p class="section-kicker">Chapter Two</p>
+          <h2 class="section-title">22 Memories</h2>
+          <p class="section-lead reveal">
+            22 moments. 22 reasons. One forever story.
+          </p>
+          <div id="gallery" class="gallery-grid"></div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: INTERACTIVE TIMELINE -->
+      <section class="timeline-section" data-section>
+        <div class="section-inner">
+          <p class="section-kicker">Chapter Three</p>
+          <h2 class="section-title">Milestones</h2>
+          <div class="timeline">
+            <div class="timeline-track"></div>
+            <div class="tl-item reveal">
+              <div class="tl-icon pulse">💞</div>
+              <div class="tl-card glass">
+                <span class="tl-date">28 October 2024</span>
+                <h3>The Beginning</h3>
+                <p>
+                  Two souls, clashing over the sending photos and it all
+                  started. Who knows deep-down dono uss moke ka wait kr rhe the.
+                  But finally the wait for both side end thats day.
+                </p>
+              </div>
+            </div>
+            <div class="tl-item reveal">
+              <div class="tl-icon pulse">💍</div>
+              <div class="tl-card glass">
+                <span class="tl-date">30 November 2024</span>
+                <h3>Our Proposal Day</h3>
+                <p>
+                  Wo din jis din decide hone wala tha ki hum aage ya to Couple
+                  honge ya kuch bhi nhi. Puri himmat juta kr har scenario soch
+                  kr. finally maine wo puch hi liya jise puchne ko mera dil kbse
+                  betab tha, Ki "Will you be my Girlfriend". And my heart stops,
+                  jb tumne kaha ki sochti hu. Mujhe lga ki maine sab kharab kr
+                  diya, ye kya kr diya. but then drum-rolling i got the answer
+                  and i was just Overwhelmed by reading "Yes......". khushi ka
+                  koi thikana hi nhi tha meri.
+                </p>
+              </div>
+            </div>
+            <div class="tl-item reveal">
+              <div class="tl-icon pulse">🤗</div>
+              <div class="tl-card glass">
+                <span class="tl-date">01 January 2025</span>
+                <h3>Our First Hug</h3>
+                <p>
+                  Yaad a wo tumhara ghabrana mujhe hug krte hue. just like a
+                  pure sole. waise maine aaj tk btaya nhi pr mai bhi bhot jyada
+                  dara hua tha pair kaanp gye the mere bhi.Btana nhi kisi ko
+                  haan.getting goosebumps.
+                </p>
+              </div>
+            </div>
+            <div class="tl-item reveal">
+              <div class="tl-icon pulse">💋</div>
+              <div class="tl-card glass">
+                <span class="tl-date">10 January 2025</span>
+                <h3>Our First Kiss</h3>
+                <p>
+                  Wo tumhare gao jaane se phle tumhare mathe pr kissi, mera mann
+                  tha ki tumhe jaane na du pr uss rokta bhi kaise. Fir wo auto
+                  me jate time tumhara mere hath pr kiss krna uss hath ko fir
+                  mera 4 baar kissi krna baar baar har baar pet me titliya
+                  uthna. Ufff.....
+                </p>
+              </div>
+            </div>
+            <div class="tl-item reveal">
+              <div class="tl-icon pulse">🌈</div>
+              <div class="tl-card glass">
+                <span class="tl-date">12 March 2025</span>
+                <h3>Our First Holi</h3>
+                <p>
+                  I remebered humara matching kapde or wo subah ki sath wali
+                  walk to the office, or wo humari iconic kissi wali photo. Fir
+                  wo shaam ko holi celebration all i wanted ki phla rang mai
+                  lagau tumhe or maine wo kiya bhi . sbse phla rang maine lgaya
+                  tumko pta bhi nahi chala.
+                </p>
+              </div>
+            </div>
+            <div class="tl-item reveal">
+              <div class="tl-icon pulse">🛍️</div>
+              <div class="tl-card glass">
+                <span class="tl-date">22 May 2025</span>
+                <h3>Our First and Only Shopping Together</h3>
+                <p>
+                  Wo Zudio me dress ke liye shopping pr jana. Alag alag dresses
+                  me tumke dekhne ka moka milna what other luxary can i ask for.
+                  Hope ki aage bhi shopping pr jane ka moka mile hume without
+                  jinx.
+                </p>
+              </div>
+            </div>
+            <div class="tl-item reveal">
+              <div class="tl-icon pulse">🎁</div>
+              <div class="tl-card glass">
+                <span class="tl-date">03 July 2025 - 04 July 2025</span>
+                <h3>My Birthday with Your suprise.</h3>
+                <p>
+                  My one of happiest birthday of life , tumhara wo unexpected
+                  cake cutting krwana subah i was so joyful and cannot process
+                  that much emotions, therefore i started act like a baby. and
+                  the gift i wore every dat till today and ahead. the lovely
+                  watch all i can say is "I love you sooooo much baby" .
+                </p>
+              </div>
+            </div>
+            <div class="tl-item reveal">
+              <div class="tl-icon pulse">🎂</div>
+              <div class="tl-card glass">
+                <span class="tl-date">21 July 2025</span>
+                <h3>Your First Birthday with Me.</h3>
+                <p>
+                  One of the best day of my life . yaad h mujhe aaj bhi wo subah
+                  subah excited hoke uthna band rasto se scooty lekr aana, and
+                  the Expression on you face jb tumne dekha main whi hu. mu
+                  suprise was succeed that moment , Humari phli two wheeler
+                  ride, uske baad wo mithaas ke samose, fir Wo spectrum ka
+                  unforgettable time. just too much happines in one day. Just
+                  wished ke wo din kabhi pura hi na ho chalta rhe bs
+                </p>
+              </div>
+            </div>
+            <div class="tl-item reveal">
+              <div class="tl-icon pulse">💖</div>
+              <div class="tl-card glass">
+                <span class="tl-date">30 November 2026</span>
+                <h3>Our First Anniversary</h3>
+                <p>
+                  Mujhe nhi pta tha ki hum itna aage tk aa jayenge but kaafi
+                  Nok-Jhok or Khub sare pyaar ke chalte we complete our one year
+                  milestone Togeather. or jaldi hi 2 saal ka milestone bhi pura
+                  kr lenge aise hi jb 50th milestone pura krenge to apne
+                  pote-potiyo ko btayenge apni kahani ki kaise humne har utar
+                  chadhav ke baad bhi aaj hum yha h ek saath.
+                </p>
+              </div>
+            </div>
+            <div class="tl-item reveal">
+              <div class="tl-icon pulse">♾️</div>
+              <div class="tl-card glass">
+                <!-- <span class="tl-date">Today...</span> -->
+                <!-- <h3>Your Happy Birthday </h3> -->
+                <p>
+                  Waise btane ke liye abhi bhot kuch hai. Aaage ke liye bacha
+                  leta hu.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: LOVE LETTER -->
+      <section class="letter-section" data-section>
+        <div class="section-inner">
+          <p class="section-kicker">Chapter Four</p>
+          <h2 class="section-title">A Letter For You</h2>
+          <div class="letter-card glass reveal">
+            <div class="letter-paper">
+              <p class="letter-salutation">Dear Manu,</p>
+              <div id="letterBody" class="letter-body"></div>
+              <p class="letter-sign">
+                Forever yours,<br /><span class="letter-name"
+                  >Tumhara Pglu ❤️</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: 22 REASONS -->
+      <section class="reasons-section" data-section>
+        <div class="section-inner">
+          <p class="section-kicker">Chapter Five</p>
+          <h2 class="section-title">22 Reasons I Love You</h2>
+          <p class="section-lead reveal">Tap a card. Discover a reason.</p>
+          <div id="reasons" class="reasons-grid"></div>
+        </div>
+      </section>
+
+      <!-- SECTION 7: BIRTHDAY SURPRISE -->
+      <section class="surprise-section" data-section>
+        <div class="section-inner">
+          <p class="section-kicker">Chapter Six</p>
+          <h2 class="section-title">A Little Surprise</h2>
+          <p class="section-lead reveal">Double Tap the gift — gently.</p>
+          <div class="gift-stage">
+            <div id="gift" class="gift">
+              <div class="gift-lid">
+                <div class="gift-bow"></div>
+              </div>
+              <div class="gift-box"></div>
+            </div>
+            <div id="cake" class="cake hidden">
+              <div class="cake-plate"></div>
+              <div class="cake-layer cake-bottom"></div>
+              <div class="cake-layer cake-middle"></div>
+              <div class="cake-layer cake-top"></div>
+              <div class="cake-candle"><span class="flame"></span></div>
+            </div>
+          </div>
+          <div id="surpriseMsg" class="surprise-msg hidden">
+            <h3>Happy Birthday Manu ❤️</h3>
+            <p>
+              Happy Birthday meri pyaari pyaari Pglu Pahadan! 💗🥳🎂 May God
+              bless you with endless happiness, success, and everything your
+              heart desires. ❤️💝 I wish I could be with you and celebrate this
+              beautiful moment by your side. 🥹🫂 I love you sooooo, sooooo,
+              sooooooooo much, my everything. 💗💕 You made my life so much more
+              beautiful and interesting. ❤️ With you, every happy moment feels
+              even happier. 😊 And every sad moment feels a little less painful
+              because I know I have you. 🫂💕 You are the person who made me
+              believe in love again. 🥹❤️🥰 Thank you for loving me,
+              understanding me, and making my world brighter every single day.
+              🌎💖 Please always stay with me. I promise I'll keep trying to
+              become a better person for us. 🫂❤️ Once again, Happy Birthday
+              meri Sabkuch! 🫂🫂🫂🫂🫂💗💕
+            </p>
+            <p class="surprise-closer">Happy Birthday, My Love.</p>
+            <p class="surprise-sign">Love,<br /><span>your Pglu</span></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL SECTION: NIGHT SKY -->
+      <section class="finale-section" data-section>
+        <canvas id="nightCanvas" class="night-canvas"></canvas>
+        <div class="finale-content">
+          <p class="finale-from">From</p>
+          <p class="finale-date">28 October 2024</p>
+          <p class="finale-to">To</p>
+          <p class="finale-forever">Forever ♾️</p>
+          <h2 class="finale-hbd">Happy Birthday Manu</h2>
+          <p class="finale-ilu">I Love You ❤️</p>
+          <p class="finale-sign">— Your Pglu</p>
+        </div>
+        <div id="moon" class="moon" aria-label="Moon"></div>
+      </section>
+
+      <footer class="site-footer">
+        <!-- <p>Crafted with love · <span>Pglu × Manu</span> · 2024 → ∞</p> -->
+      </footer>
+    </main>
+
+    <!-- ============ LIGHTBOX ============ -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lb-close" aria-label="Close">✕</button>
+      <button class="lb-prev" aria-label="Previous">‹</button>
+      <button class="lb-next" aria-label="Next">›</button>
+      <div class="lb-stage">
+        <div id="lbImageWrap" class="lb-image-wrap">
+          <img id="lbImage" src="" alt="" />
+        </div>
+        <div class="lb-caption">
+          <h3 id="lbTitle"></h3>
+          <p id="lbDate"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ MUSIC CONTROLS ============ -->
+    <div id="musicControls" class="music-controls hidden">
+      <button id="playBtn" class="mc-btn" aria-label="Play/Pause">
+        <svg
+          id="playIcon"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path d="M8 5v14l11-7z" />
+        </svg>
+        <svg
+          id="pauseIcon"
+          class="hidden"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
+        </svg>
+      </button>
+      <input
+        id="volume"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.5"
+        aria-label="Volume"
+      />
+      <div class="mc-progress">
+        <div id="progressBar" class="mc-bar"></div>
+      </div>
+      <span id="timeLabel" class="mc-time">0:00</span>
+    </div>
+
+    <audio id="bgMusic" loop preload="auto">
+      <source src="music/piano.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
